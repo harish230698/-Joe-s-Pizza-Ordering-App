@@ -1,0 +1,80 @@
+﻿@model Pizzaorder.Models.PizzaModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    
+    <dl class="row">
+        <dt class="col-sm-2" style="visibility:hidden">
+            @Html.DisplayNameFor(model => model.SNo)
+        </dt>
+        <dd class="col-sm-10" style="visibility:hidden">
+            @Html.DisplayFor(model => model.SNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/images/@Html.DisplayFor(model => model.ImagePath)" width="100px" height="100px" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PizzaName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PizzaName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            <b>Qty</b>
+        </dt>
+        <dd class="col-sm-10">
+            <select id="Quantity" name="Quantity">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4">5</option>
+                <option value="4">6</option>
+                <option value="4">7</option>
+                <option value="4">8</option>
+                <option value="4">9</option>
+                <option value="4">10</option>
+            </select>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="@Url.Action("PlaceOrder","PlaceOrder",  new { id = Model.SNo, val = "Add" })" class="=btn btn-info btn-lg">
+
+        <span>
+            Add To Cart
+        </span>
+        <i class="fa fa-angle-double-right"></i>
+    </a> |
+    <a href="@Url.Action("Index","PizzaOrder")" class="btn btn-info btn-lg">
+        <span>
+            Back To List
+        </span>
+        <i class="fa fa-angle-double-right"></i>
+    </a>
+</div>
